@@ -44,9 +44,6 @@
     <ClCompile Include="GeneratedFiles\Debug\moc_qttellermachine.cpp">
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_qttellermachine.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
     <ClCompile Include="GeneratedFiles\qrc_qttellermachine.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
