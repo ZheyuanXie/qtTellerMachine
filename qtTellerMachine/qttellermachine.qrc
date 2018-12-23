@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="qtTellerMachine">
+    <file>Resources/atm.jpg</file>
+  </qresource>
+</RCC>
