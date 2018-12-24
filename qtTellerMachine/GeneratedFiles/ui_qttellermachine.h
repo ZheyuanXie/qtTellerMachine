@@ -16,15 +16,18 @@
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLCDNumber>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QSpinBox>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include "oglwidget.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -32,26 +35,34 @@ class Ui_qtTellerMachineClass
 {
 public:
     QWidget *centralWidget;
+    QGridLayout *gridLayout_2;
     QVBoxLayout *verticalLayout;
     QGroupBox *groupBox;
     QVBoxLayout *verticalLayout_2;
     QPushButton *btn_mdlogin;
-    QCheckBox *cb_save;
+    QHBoxLayout *horizontalLayout;
     QLabel *label_6;
     QLineEdit *le_ins;
+    QCheckBox *cb_save;
+    QHBoxLayout *horizontalLayout_5;
     QPushButton *btn_subscribe;
     QPushButton *btn_unsubscribe;
     QLabel *lb_tradingday;
+    QSpacerItem *verticalSpacer;
     QGroupBox *groupBox_2;
     QVBoxLayout *verticalLayout_3;
+    QHBoxLayout *horizontalLayout_3;
     QLabel *label;
     QLineEdit *le_usrname;
+    QHBoxLayout *horizontalLayout_4;
     QLabel *label_2;
     QLineEdit *le_pswd;
     QPushButton *btn_tdlogin;
     QPushButton *pushButton_5;
     QPushButton *pushButton;
     QPushButton *btn_accountQry;
+    QVBoxLayout *verticalLayout_4;
+    OGLWidget *openGLWidget;
     QGroupBox *groupBox_3;
     QGridLayout *gridLayout;
     QLabel *label_3;
@@ -70,16 +81,20 @@ public:
     {
         if (qtTellerMachineClass->objectName().isEmpty())
             qtTellerMachineClass->setObjectName(QStringLiteral("qtTellerMachineClass"));
-        qtTellerMachineClass->resize(505, 1069);
-        qtTellerMachineClass->setMinimumSize(QSize(400, 400));
+        qtTellerMachineClass->resize(1142, 686);
+        qtTellerMachineClass->setMinimumSize(QSize(0, 0));
         qtTellerMachineClass->setMaximumSize(QSize(1920, 1080));
         qtTellerMachineClass->setTabShape(QTabWidget::Rounded);
         qtTellerMachineClass->setDockNestingEnabled(false);
         centralWidget = new QWidget(qtTellerMachineClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        verticalLayout = new QVBoxLayout(centralWidget);
+        gridLayout_2 = new QGridLayout(centralWidget);
+        gridLayout_2->setSpacing(6);
+        gridLayout_2->setContentsMargins(11, 11, 11, 11);
+        gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
+        gridLayout_2->setSizeConstraint(QLayout::SetNoConstraint);
+        verticalLayout = new QVBoxLayout();
         verticalLayout->setSpacing(6);
-        verticalLayout->setContentsMargins(11, 11, 11, 11);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         groupBox = new QGroupBox(centralWidget);
         groupBox->setObjectName(QStringLiteral("groupBox"));
@@ -92,31 +107,43 @@ public:
 
         verticalLayout_2->addWidget(btn_mdlogin);
 
-        cb_save = new QCheckBox(groupBox);
-        cb_save->setObjectName(QStringLiteral("cb_save"));
-        cb_save->setChecked(true);
-
-        verticalLayout_2->addWidget(cb_save);
-
+        horizontalLayout = new QHBoxLayout();
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         label_6 = new QLabel(groupBox);
         label_6->setObjectName(QStringLiteral("label_6"));
 
-        verticalLayout_2->addWidget(label_6);
+        horizontalLayout->addWidget(label_6);
 
         le_ins = new QLineEdit(groupBox);
         le_ins->setObjectName(QStringLiteral("le_ins"));
 
-        verticalLayout_2->addWidget(le_ins);
+        horizontalLayout->addWidget(le_ins);
 
+        cb_save = new QCheckBox(groupBox);
+        cb_save->setObjectName(QStringLiteral("cb_save"));
+        cb_save->setChecked(true);
+
+        horizontalLayout->addWidget(cb_save);
+
+
+        verticalLayout_2->addLayout(horizontalLayout);
+
+        horizontalLayout_5 = new QHBoxLayout();
+        horizontalLayout_5->setSpacing(6);
+        horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
         btn_subscribe = new QPushButton(groupBox);
         btn_subscribe->setObjectName(QStringLiteral("btn_subscribe"));
 
-        verticalLayout_2->addWidget(btn_subscribe);
+        horizontalLayout_5->addWidget(btn_subscribe);
 
         btn_unsubscribe = new QPushButton(groupBox);
         btn_unsubscribe->setObjectName(QStringLiteral("btn_unsubscribe"));
 
-        verticalLayout_2->addWidget(btn_unsubscribe);
+        horizontalLayout_5->addWidget(btn_unsubscribe);
+
+
+        verticalLayout_2->addLayout(horizontalLayout_5);
 
         lb_tradingday = new QLabel(groupBox);
         lb_tradingday->setObjectName(QStringLiteral("lb_tradingday"));
@@ -126,32 +153,48 @@ public:
 
         verticalLayout->addWidget(groupBox);
 
+        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout->addItem(verticalSpacer);
+
         groupBox_2 = new QGroupBox(centralWidget);
         groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
         verticalLayout_3 = new QVBoxLayout(groupBox_2);
         verticalLayout_3->setSpacing(6);
         verticalLayout_3->setContentsMargins(11, 11, 11, 11);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setSpacing(6);
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
         label = new QLabel(groupBox_2);
         label->setObjectName(QStringLiteral("label"));
 
-        verticalLayout_3->addWidget(label);
+        horizontalLayout_3->addWidget(label);
 
         le_usrname = new QLineEdit(groupBox_2);
         le_usrname->setObjectName(QStringLiteral("le_usrname"));
 
-        verticalLayout_3->addWidget(le_usrname);
+        horizontalLayout_3->addWidget(le_usrname);
 
+
+        verticalLayout_3->addLayout(horizontalLayout_3);
+
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setSpacing(6);
+        horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
         label_2 = new QLabel(groupBox_2);
         label_2->setObjectName(QStringLiteral("label_2"));
 
-        verticalLayout_3->addWidget(label_2);
+        horizontalLayout_4->addWidget(label_2);
 
         le_pswd = new QLineEdit(groupBox_2);
         le_pswd->setObjectName(QStringLiteral("le_pswd"));
         le_pswd->setEchoMode(QLineEdit::Password);
 
-        verticalLayout_3->addWidget(le_pswd);
+        horizontalLayout_4->addWidget(le_pswd);
+
+
+        verticalLayout_3->addLayout(horizontalLayout_4);
 
         btn_tdlogin = new QPushButton(groupBox_2);
         btn_tdlogin->setObjectName(QStringLiteral("btn_tdlogin"));
@@ -175,6 +218,23 @@ public:
 
 
         verticalLayout->addWidget(groupBox_2);
+
+
+        gridLayout_2->addLayout(verticalLayout, 0, 0, 1, 1);
+
+        verticalLayout_4 = new QVBoxLayout();
+        verticalLayout_4->setSpacing(6);
+        verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
+        openGLWidget = new OGLWidget(centralWidget);
+        openGLWidget->setObjectName(QStringLiteral("openGLWidget"));
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(openGLWidget->sizePolicy().hasHeightForWidth());
+        openGLWidget->setSizePolicy(sizePolicy);
+        openGLWidget->setMinimumSize(QSize(300, 300));
+
+        verticalLayout_4->addWidget(openGLWidget);
 
         groupBox_3 = new QGroupBox(centralWidget);
         groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
@@ -309,7 +369,10 @@ public:
         gridLayout->addWidget(pushButton_3, 0, 4, 1, 1);
 
 
-        verticalLayout->addWidget(groupBox_3);
+        verticalLayout_4->addWidget(groupBox_3);
+
+
+        gridLayout_2->addLayout(verticalLayout_4, 0, 1, 1, 1);
 
         qtTellerMachineClass->setCentralWidget(centralWidget);
 
@@ -333,16 +396,16 @@ public:
         qtTellerMachineClass->setWindowTitle(QApplication::translate("qtTellerMachineClass", "qtTellerMachine", Q_NULLPTR));
         groupBox->setTitle(QApplication::translate("qtTellerMachineClass", "MD", Q_NULLPTR));
         btn_mdlogin->setText(QApplication::translate("qtTellerMachineClass", "Login", Q_NULLPTR));
-        cb_save->setText(QApplication::translate("qtTellerMachineClass", "Save To File", Q_NULLPTR));
         label_6->setText(QApplication::translate("qtTellerMachineClass", "INST:", Q_NULLPTR));
-        le_ins->setText(QApplication::translate("qtTellerMachineClass", "m1705", Q_NULLPTR));
+        le_ins->setText(QApplication::translate("qtTellerMachineClass", "m1905", Q_NULLPTR));
+        cb_save->setText(QApplication::translate("qtTellerMachineClass", "Save To File", Q_NULLPTR));
         btn_subscribe->setText(QApplication::translate("qtTellerMachineClass", "Subscribe", Q_NULLPTR));
         btn_unsubscribe->setText(QApplication::translate("qtTellerMachineClass", "Unsubscribe", Q_NULLPTR));
         lb_tradingday->setText(QApplication::translate("qtTellerMachineClass", "TradingDay:N/A", Q_NULLPTR));
         groupBox_2->setTitle(QApplication::translate("qtTellerMachineClass", "TRADE", Q_NULLPTR));
         label->setText(QApplication::translate("qtTellerMachineClass", "USER:", Q_NULLPTR));
         le_usrname->setText(QString());
-        label_2->setText(QApplication::translate("qtTellerMachineClass", "PASSWORD:", Q_NULLPTR));
+        label_2->setText(QApplication::translate("qtTellerMachineClass", "PSWD:", Q_NULLPTR));
         le_pswd->setText(QString());
         le_pswd->setPlaceholderText(QString());
         btn_tdlogin->setText(QApplication::translate("qtTellerMachineClass", "Login", Q_NULLPTR));

@@ -11,10 +11,14 @@ class qtTradingClock : public QWidget
 public:
 	qtTradingClock(QWidget *parent = Q_NULLPTR);
 	~qtTradingClock();
-	QTimeZone timezone;
 
+protected:
+	void mousePressEvent(QMouseEvent *evt);
+	void mouseMoveEvent(QMouseEvent *evt);
+	
 private:
 	Ui::qtTradingClock ui;
+	QPoint oldPos;
 
 private slots:
 	void tick();

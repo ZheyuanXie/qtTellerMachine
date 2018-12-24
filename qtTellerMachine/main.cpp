@@ -27,6 +27,7 @@ int main(int argc, char *argv[])
 	w.show();
 	qtTradingClock clock;
 	clock.setWindowFlag(Qt::WindowStaysOnTopHint);
+	clock.setWindowFlag(Qt::FramelessWindowHint);
 	clock.show();
 	return a.exec();
 }
