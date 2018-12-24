@@ -1,5 +1,6 @@
 #include <QApplication>
 #include "qttellermachine.h"
+#include "qtTradingClock.h"
 #include "Windows.h"
 
 ///////////*全局变量定义区*///////////
@@ -24,5 +25,8 @@ int main(int argc, char *argv[])
 	qtTellerMachine w;
 	tm = &w;
 	w.show();
+	qtTradingClock clock;
+	clock.setWindowFlag(Qt::WindowStaysOnTopHint);
+	clock.show();
 	return a.exec();
 }
